@@ -1,6 +1,5 @@
 {
   "manifest_version": "0.2.0",
-  "experimental_features": ["docker"],
   "program": {
     "image": "ghcr.io/vk-infocusp/officeqa-rag-agent:latest",
     "entrypoint": "python server.py --host 0.0.0.0 --port 9009",
