@@ -1,29 +1,34 @@
 {
   "manifest_version": "0.2.0",
+
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "google_api_key": { "type": "string", "secret": true }
+    },
+    "required": ["google_api_key"],
+    "additionalProperties": false
+  },
+
+  "slots": {},
+
   "program": {
     "image": "ghcr.io/vk-infocusp/officeqa-rag-agent:latest",
     "entrypoint": "python server.py --host 0.0.0.0 --port 9009",
     "env": {
       "PYTHONUNBUFFERED": "1",
-      "GOOGLE_API_KEY": "${secrets.GOOGLE_API_KEY}"
+      "GOOGLE_API_KEY": "${config.google_api_key}"
     },
     "network": {
       "endpoints": [
-        { "name": "a2a", "port": 9009 }
+        { "name": "a2a_endpoint", "port": 9009 }
       ]
     }
   },
-  "config_schema": {
-    "type": "object",
-    "properties": {},
-    "required": [],
-    "additionalProperties": false
-  },
-  "slots": {},
+
   "provides": {
-    "a2a": { "kind": "a2a", "endpoint": "a2a" }
+    "a2a": { "kind": "a2a", "endpoint": "a2a_endpoint" }
   },
-  "exports": {
-    "a2a": "a2a"
-  }
+
+  "exports": { "a2a": "a2a" }
 }
