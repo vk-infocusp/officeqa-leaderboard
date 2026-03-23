@@ -3,8 +3,8 @@ agentbeats_id = "arnavsinghvi11/officeqa"
 env = { LOG_LEVEL = "INFO" }
 
 [[participants]]
+agentbeats_id = "019d165f-1c5c-7f10-8e7d-e2982bd9191b"
 name = "officeqa_rag_agent"
-image = "ghcr.io/vk-infocusp/officeqa-rag-agent:latest"
 env = { GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
 
 [config]
