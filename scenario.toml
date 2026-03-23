@@ -3,12 +3,13 @@ agentbeats_id = "arnavsinghvi11/officeqa"
 env = { LOG_LEVEL = "INFO" }
 
 [[participants]]
-agentbeats_id = "arnavsinghvi11/officeqa-sample-baseline-agent"
-name = "officeqa_agent"
-env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_MODEL = "gpt-5.2", REASONING_EFFORT = "medium" }
+agentbeats_id = "019d165f-1c5c-7f10-8e7d-e2982bd9191b"
+name = "officeqa_rag_agent"
+image = "ghcr.io/vk-infocusp/officeqa-rag-agent:latest"
+env = { GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
 
 [config]
-dataset_url = "https://raw.githubusercontent.com/databricks/officeqa/main/officeqa.csv"
+dataset_url = "https://raw.githubusercontent.com/databricks/officeqa/main/officeqa_full.csv"
 num_questions = 246
 difficulty = "all"
 tolerance = 0.0
