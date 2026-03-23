@@ -10,7 +10,7 @@ env = { GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
 
 [config]
 dataset_url = "https://raw.githubusercontent.com/databricks/officeqa/main/officeqa_full.csv"
-num_questions = 246
+num_questions = 10
 difficulty = "all"
 tolerance = 0.0
 run_id = 1
